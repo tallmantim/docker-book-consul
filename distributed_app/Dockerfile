@@ -1,10 +1,10 @@
 FROM ubuntu:18.04
 LABEL maintainer="james@example.com"
-ENV REFRESHED_AT 2016-06-01
+ENV REFRESHED_AT 2019-01-07
 
 RUN apt-get -qq update
-RUN apt-get -qq install ruby-dev git libcurl4-openssl-dev curl build-essential python
-RUN gem install --no-ri --no-rdoc uwsgi sinatra
+RUN apt-get -qq install ruby-dev git libcurl4-openssl-dev curl build-essential python uwsgi uwsgi-dev
+RUN gem install --no-ri --no-rdoc sinatra
 
 RUN mkdir -p /opt/distributed_app
 WORKDIR /opt/distributed_app
